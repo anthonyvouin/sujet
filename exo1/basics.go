@@ -1,4 +1,4 @@
-package exo1
+package exo1 
 
 func Sum(a, b, c int) int {
 	return a + b + c
