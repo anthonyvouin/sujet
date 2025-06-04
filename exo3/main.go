@@ -97,12 +97,10 @@ func EvaluateGuess(secret, guess string) GuessResult {
 	result := make(GuessResult, len(guessRunes))
 	secretUsed := make([]bool, len(secretRunes))
 
-	// Initialize all as Absent
 	for i := range result {
 		result[i] = Absent
 	}
 
-	// First pass: mark correct positions
 	for i := 0; i < len(guessRunes) && i < len(secretRunes); i++ {
 		if guessRunes[i] == secretRunes[i] {
 			result[i] = CorrectPosition
@@ -110,7 +108,6 @@ func EvaluateGuess(secret, guess string) GuessResult {
 		}
 	}
 
-	// Second pass: mark wrong positions
 	for i := 0; i < len(guessRunes); i++ {
 		if result[i] == CorrectPosition {
 			continue
